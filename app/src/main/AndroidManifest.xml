@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mysummary.myproject">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+
+    <application
+        android:name=".app.QiandaoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".materialdesign.activity.MaterialDesignActivity" />
+        <activity android:name=".materialdesign.activity.FloatingActionButtonActivity" />
+        <activity android:name=".materialdesign.activity.AppBarLayoutActivity" />
+        <activity android:name=".materialdesign.activity.CoordinatorLayoutActivity" />
+        <activity android:name=".materialdesign.activity.TabLayoutActivity" />
+        <activity android:name=".materialdesign.activity.TextInputActivity" />
+        <activity android:name=".materialdesign.activity.DependencyViewActivity" />
+        <activity android:name=".materialdesign.activity.DependencyView1Activity" />
+        <activity android:name=".broadcast.activity.BroadCastActivity" />
+
+        <!-- 静态注册广播 -->
+        <receiver android:name=".broadcast.receiver.MyBroadCastReciver">
+            <intent-filter>
+                <action android:name="com.to.broadcast" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".android_basis.service.startservice.StartServiceActivity" />
+        <activity android:name=".android_basis.service.ServiceActivity" />
+        <!-- 注册服务 -->
+        <service android:name=".android_basis.service.startservice.ServiceStart" />
+        <service android:name=".android_basis.service.bindservice.ServiceBind" />
+
+        <activity android:name=".android_basis.service.bindservice.BindServiceActivity" />
+        <activity android:name=".java_basis.JavaBasisActivity" />
+        <activity android:name=".java_basis.fanxing.FanXingActivity" />
+        <activity
+            android:name=".android_basis.web_view.WebViewActivity"
+            android:hardwareAccelerated="true" />
+        <activity android:name=".android_basis.AndroidBasisActivity" />
+        <activity android:name=".android_basis.zidingyi_view.CustomViewActivity" />
+        <activity android:name=".android_basis.donghua.AnimationActivity" />
+        <activity android:name=".android_basis.android_architecture.mvc.MVCActivity" />
+        <activity android:name=".android_basis.event_bus.EventBusActivity" />
+        <activity android:name=".android_basis.event_bus.PublishActivity" />
+        <activity android:name=".android_basis.event_bus.StickyModeActivity" />
+        <activity android:name=".android_basis.android_architecture.mvp.view.MVPActivity" />
+        <activity android:name=".android_basis.sqlite.SqliteActivity" />
+        <activity android:name=".android_basis.constraint_Layout.ConstraintLayoutActivity" />
+        <activity android:name=".android_basis.recyclerview.RecylcerViewActivity" />
+        <activity android:name=".android_basis.recyclerview.swiperefresh.SwipeRefreshActivity" />
+        <activity android:name=".android_basis.multi_thread.HandlerThreadDemo" />
+        <activity android:name=".android_basis.event_dispatch.EventActivity" />
+        <activity
+            android:name=".materialdesign.activity.CoordinatorLayoutActivity1"
+            android:label="@string/app_name" />
+        <activity android:name=".materialdesign.activity.ToolBarActivity" />
+        <activity android:name=".android_basis.databinding.activity.DataBindingSimpleActivity" />
+        <activity android:name=".android_basis.databinding.DataBindingActivity" />
+        <activity android:name=".android_basis.databinding.activity.DataBindListActivity" />
+        <activity android:name=".android_basis.rxjava2.Rxjava2Activity" />
+        <activity android:name=".android_basis.progressbar.ProgressBarActivity" />
+        <activity android:name=".android_basis.event_dispatch.scroll_listview.ScrollListVIewActivity" />
+        <activity android:name=".android_basis.event_dispatch.nestscrollrecyclerview.NestScrollRecyclerViewActivity" />
+        <activity android:name=".android_basis.event_dispatch.nest_scroll_recycl_viewpage.NestScrollRecyclViewPagerActivity" />
+        <activity android:name=".android_basis.ui_optimization.UIActivity"></activity>
+
+
+        <!--配置友盟渠道-->
+        <!--<meta-data-->
+            <!--android:value="${CHANNEL_VALUE}"-->
+            <!--android:name="UMENG_CHANNEL"/>-->
+    </application>
+
+
+
+</manifest>

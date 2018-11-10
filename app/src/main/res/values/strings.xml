@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">MyProject</string>
+
+    <string-array name="apples">
+        <item>iphone3g</item>
+        <item>iphone3gs</item>
+        <item>iphone4</item>
+        <item>iphone4s</item>
+        <item>iphone5</item>
+        <item>iphone5s</item>
+        <item>iphone6</item>
+        <item>iphone6p</item>
+        <item>iphone6s</item>
+        <item>iphone6sp</item>
+        <item>iphone7</item>
+        <item>iphone7p</item>
+        <item>iphone8</item>
+        <item>iphone8p</item>
+        <item>iphoneX</item>
+    </string-array>
+
+    <string name="content_behavior" translatable="false">com.mysummary.myproject.materialdesign.behavior.HeaderScrollBehavior</string>
+    <string name="floating_title_behavoir">com.mysummary.myproject.materialdesign.behavior.FloatingHeaderTitleBehavior</string>
+
+</resources>

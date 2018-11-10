@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mysummary.myproject.broadcast.activity.BroadCastActivity">
+
+
+    <Button
+        android:id="@+id/btn_send_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送广播"/>
+
+    <Button
+        android:id="@+id/btn_network_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="判断网络状态广播"
+        app:layout_constraintTop_toBottomOf="@+id/btn_send_broadcast"/>
+
+</android.support.constraint.ConstraintLayout>

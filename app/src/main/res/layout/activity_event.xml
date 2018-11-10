@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.mysummary.myproject.android_basis.event_dispatch.Dispatchlinearlayout1
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal"
+        android:background="#eee">
+
+    <com.mysummary.myproject.android_basis.event_dispatch.Dispatchlinearlayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:background="#cc00bb">
+
+        <com.mysummary.myproject.android_basis.event_dispatch.DispatchButton
+            android:id="@+id/bt1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="BUTTON1"/>
+
+    </com.mysummary.myproject.android_basis.event_dispatch.Dispatchlinearlayout>
+    </com.mysummary.myproject.android_basis.event_dispatch.Dispatchlinearlayout1>
+
+    <com.mysummary.myproject.android_basis.event_dispatch.DispatchButton
+        android:id="@+id/bt2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="BUTTON2"/>
+
+    <Button
+        android:id="@+id/bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="to_ScrollListVIewActivity"
+        android:textSize="20dp"
+        />
+    <Button
+        android:id="@+id/bt_nest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="to_NestScrollRecyclerViewActivity"
+        android:textSize="20dp"
+        android:visibility="gone"
+        />
+    <Button
+        android:id="@+id/bt_v"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="to_NestScrollRecyclViewPagerActivity"
+        android:textSize="20dp"
+        />
+
+
+</LinearLayout>

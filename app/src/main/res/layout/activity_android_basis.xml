@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mysummary.myproject.android_basis.AndroidBasisActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_to_webview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="webview"/>
+            <Button
+                android:id="@+id/btn_to_customview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义view"/>
+            <Button
+                android:id="@+id/btn_to_animation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="动画"/>
+            <Button
+                android:id="@+id/btn_to_eventbus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EventBus"/>
+            <Button
+                android:id="@+id/btn_to_mvp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MVP架构"/>
+            <Button
+                android:id="@+id/btn_to_mvc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MVC架构"/>
+            <Button
+                android:id="@+id/btn_to_sqlite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sqlite数据库升级"/>
+
+            <Button
+                android:id="@+id/btn_to_constraint_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="constraint_layout"/>
+
+            <Button
+                android:id="@+id/btn_to_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RecyclerView"/>
+            <Button
+                android:id="@+id/btn_to_swipe_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SwipeRefreshActivity"/>
+            <Button
+                android:id="@+id/btn_to_handlthread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HandlerThreadDemo"/>
+            <Button
+                android:id="@+id/btn_to_event_dispatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="事件分发"/>
+            <Button
+                android:id="@+id/btn_to_data_binding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DataBinding"/>
+            <Button
+                android:id="@+id/btn_to_rxjava"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RXJAVA2"/>
+            <Button
+                android:id="@+id/btn_to_progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="进度条 "/>
+            <Button
+                android:id="@+id/btn_to_uiactivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UIactivity "/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

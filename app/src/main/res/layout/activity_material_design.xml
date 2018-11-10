@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="MaterialDesign"/>
+
+    <Button
+        android:id="@+id/btn_to_float"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_float"
+        />
+    <Button
+        android:id="@+id/btn_to_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_appbar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_float"/>
+
+    <Button
+        android:id="@+id/btn_to_coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_coordinator"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_appbar"/>
+    <Button
+        android:id="@+id/btn_to_coordinator1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_coordinator1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_coordinator"/>
+
+    <Button
+        android:id="@+id/btn_to_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_tablayout"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_coordinator1"/>
+
+    <Button
+        android:id="@+id/btn_to_textinput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_textinput"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_tablayout"/>
+    <Button
+        android:id="@+id/btn_to_dpv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_dpv"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_textinput"/>
+
+    <Button
+        android:id="@+id/btn_to_dpv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_dpv1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_dpv"/>
+
+    <Button
+        android:id="@+id/btn_to_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_dpv1"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

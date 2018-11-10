@@ -1,0 +1,140 @@
+apply plugin: 'com.android.application'
+
+//生成打包时间
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.mysummary.myproject"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //signingConfig signingConfigs.release
+        multiDexEnabled = true//突破65535限制
+
+    }
+
+    signingConfigs {
+//        debug {
+//            try {
+//                storeFile file("/Users/mac/Desktop/qiandaojrandroid.keystore")
+//                storePassword "123456"
+//                keyAlias "qiandao"
+//                keyPassword "123456"
+//                v2SigningEnabled false
+//            } catch (ex) {
+//                throw new InvalidUserDataException(ex.toString())
+//            }
+//
+////-------------1--------------
+////            多渠道打包配置
+//            applicationVariants.all { variant ->
+//                variant.outputs.all { output ->  // each 改为 all
+//                    def fileName = "${variant.versionName}_release.apk"
+//                    def outFile = output.outputFile
+//                    if (outFile != null && outFile.name.endsWith('.apk')) {
+//                        outputFileName = fileName  //  output.outputFile 改为 outputFileName
+//                    }
+//                }
+//            }
+//        }
+
+
+        release {
+            storeFile file("/Users/mac/Desktop/qiandaojrandroid.keystore")
+            storePassword "123456"
+            keyAlias "qiandao"
+            keyPassword "123456"
+            //v2SigningEnabled false
+//-------------1--------------
+//            多渠道打包配置
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->  // each 改为 all
+                    def fileName = "${variant.versionName}_release.apk"
+                    def outFile = output.outputFile
+                    if (outFile != null && outFile.name.endsWith('.apk')) {
+                        outputFileName = fileName  //  output.outputFile 改为 outputFileName
+                    }
+                }
+            }
+        }
+//--------------1----------------
+    }
+
+    buildTypes {
+        release {
+            // shrinkResources true //是否清理无用资源,依赖于minifyEnabled
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+
+
+    }
+    //使用databinding
+    dataBinding {
+        enabled = true
+    }
+
+//--------------2----------------
+    /*
+       指定多个渠道
+       https://blog.csdn.net/k_bb_666/article/details/79113222
+   */
+    flavorDimensions("channel")
+//
+    productFlavors {
+
+        baidu {
+            manifestPlaceholders = [CHANNEL: "baidu"]
+            dimension "channel"
+        }
+
+        xiaomi {
+            manifestPlaceholders = [CHANNEL: "xiaomi"]
+            dimension "channel"
+        }
+    }
+//
+//
+//
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name] //动态地修改AndroidManifest中的渠道名
+    }
+//--------------2----------------
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:26.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation 'com.android.support:design:26.0.0-alpha1'
+    implementation 'de.greenrobot:eventbus:3.0.0-beta1'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    compile 'com.alipay.euler:andfix:0.5.0@aar'
+    //引入AndFix热修复模块
+}

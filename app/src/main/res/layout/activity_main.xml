@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mysummary.myproject.MainActivity">
+
+
+    <Button
+        android:id="@+id/btn_to_material"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_material"
+        />
+    <Button
+        android:id="@+id/btn_to_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_broadcast"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_material"
+        />
+
+    <Button
+        android:id="@+id/btn_to_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_service"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_broadcast"
+        />
+    <Button
+        android:id="@+id/btn_to_bro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_to_b"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_service"
+        />
+    <Button
+        android:id="@+id/btn_to_java"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="java基础知识"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_service"
+        />
+    <Button
+        android:id="@+id/btn_to_android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="android基础知识"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_java"
+        />
+
+    <Button
+        android:id="@+id/btn_produce_bug"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_to_android"
+        android:text="产生bug"/>
+    <Button
+        android:id="@+id/btn_fix_bug"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_produce_bug"
+        android:text="修复bug"/>
+
+</android.support.constraint.ConstraintLayout>
