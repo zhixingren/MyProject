@@ -53,7 +53,7 @@ public class AndFixService extends Service{
         super.onCreate();
         init();
 
-
+//
     }
 
     @Override
