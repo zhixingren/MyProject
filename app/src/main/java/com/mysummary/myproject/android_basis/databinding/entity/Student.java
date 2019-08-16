@@ -15,18 +15,31 @@ public class Student extends BaseObservable{
     public String name ;
     public String sex ;
    // public boolean fire = false;
+    public String head ;
     public ObservableBoolean mfire = new ObservableBoolean();
 
     public ObservableArrayMap<String,String> map = new ObservableArrayMap<>();
 
 
-    public Student(String name, String sex) {
+    public Student(String name, String sex,String head) {
         this.name = name;
         this.sex = sex;
+        this.head = head;
         mfire.set(false);
         map.put("hello","word");
         map.put("hi","w");
         map.put("yo","ww");
+
+    }
+
+    @Bindable
+    public String getHead(){
+        return head ;
+    }
+
+    public void setHead(String head){
+        this.head = head;
+        notifyPropertyChanged(BR.head);
 
     }
 

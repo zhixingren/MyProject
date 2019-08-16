@@ -61,7 +61,7 @@ public class NetService {
         builder.readTimeout(readTimeoutMills,TimeUnit.SECONDS);
         builder.retryOnConnectionFailure(true);
 
-        builder.cookieJar(new CookiesManager(context));
+        //builder.cookieJar(new CookiesManager(context));
         //builder.addInterceptor();
         //添加拦截器
         addInterceptors(builder,map);

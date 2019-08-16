@@ -6,11 +6,11 @@ def releaseTime() {
 }
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.mysummary.myproject"
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -114,16 +114,16 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:26.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    implementation 'com.android.support:design:26.0.0-alpha1'
+    implementation 'com.android.support:design:28.0.0'
     implementation 'de.greenrobot:eventbus:3.0.0-beta1'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
@@ -134,7 +134,13 @@ dependencies {
 
     implementation 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    //implementation 'com.github.zhuxiaohang2016:xwjr_staple:0.2.3'
 
-    compile 'com.alipay.euler:andfix:0.5.0@aar'
+
+    implementation 'com.alipay.euler:andfix:0.5.0@aar'
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //引入AndFix热修复模块
+}
+repositories {
+    mavenCentral()
 }

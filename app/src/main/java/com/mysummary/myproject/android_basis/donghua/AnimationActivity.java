@@ -77,7 +77,7 @@ public class AnimationActivity extends AppCompatActivity {
 //        animator.setDuration(600);
 //        animator.start();
 
-        ObjectAnimator moveIn = ObjectAnimator.ofFloat(iv, "translationX", -500f, 0f);
+        ObjectAnimator moveIn = ObjectAnimator.ofFloat(iv, "translationX", -50f, 0f);
         ObjectAnimator rotate = ObjectAnimator.ofFloat(iv, "rotation", 0f, 360f);
         ObjectAnimator fadeInOut = ObjectAnimator.ofFloat(iv, "alpha", 1f, 0f, 1f);
 

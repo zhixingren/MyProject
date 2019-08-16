@@ -14,7 +14,7 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
-
+import android.view.MotionEvent;
 
 
 /**
@@ -133,5 +133,17 @@ public class RoundImageView extends AppCompatImageView{
 
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        System.out.println(event);
+        System.out.println(event.getX());
+        System.out.println(event.getRawX());
 
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        return super.dispatchTouchEvent(event);
+    }
 }

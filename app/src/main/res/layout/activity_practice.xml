@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+
+    <data>
+        <variable
+            name="student"
+            type="com.mysummary.myproject.android_basis.databinding.entity.Student"/>
+        <variable
+            name="present"
+            type="com.mysummary.myproject.android_basis.databinding.activity.PracticeActivity.Present"/>
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <TextView
+            android:id="@+id/tv_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{student.name}"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> present.onClick(student)}"
+            android:text="点击事件"
+            app:layout_constraintTop_toBottomOf="@+id/tv_"
+            />
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</layout>

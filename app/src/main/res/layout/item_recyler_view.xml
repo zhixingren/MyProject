@@ -2,7 +2,8 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="50dp"
+    android:background="#ffffff"
    >
 
 
@@ -11,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="hh"
+        android:textSize="25dp"
+        android:gravity="center"
         />
 
 

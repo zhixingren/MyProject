@@ -1,5 +1,10 @@
 package com.mysummary.myproject.android_basis.net.entity;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+import com.mysummary.myproject.BR;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -43,7 +48,7 @@ public class BaseEntity implements Serializable{
         this.data = data;
     }
 
-    public static class DataBean {
+    public class DataBean extends BaseObservable{
         /**
          * targetGroupCode : null
          * imageUrl : https://www.qiandaojr.com/d/file/qiandaojr/2017-01-03/c321d2548d67963b4808bbffde79b716.jpg
@@ -79,7 +84,7 @@ public class BaseEntity implements Serializable{
         private Object fundMarkName2;
         private int advertId;
         private String targetUrl;
-        private Object fundMarkValue1;
+        public String fundMarkValue1;
         private String version;
         private Object fundMarkName1;
         private int spaceIndex;
@@ -184,12 +189,15 @@ public class BaseEntity implements Serializable{
             this.targetUrl = targetUrl;
         }
 
-        public Object getFundMarkValue1() {
+        @Bindable
+        public String getFundMarkValue1() {
             return fundMarkValue1;
         }
 
-        public void setFundMarkValue1(Object fundMarkValue1) {
+        public void setFundMarkValue1(String  fundMarkValue1) {
             this.fundMarkValue1 = fundMarkValue1;
+            notifyPropertyChanged(BR.fundMarkValue1);
+
         }
 
         public String getVersion() {
@@ -247,5 +255,10 @@ public class BaseEntity implements Serializable{
         public void setTagline(String tagline) {
             this.tagline = tagline;
         }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

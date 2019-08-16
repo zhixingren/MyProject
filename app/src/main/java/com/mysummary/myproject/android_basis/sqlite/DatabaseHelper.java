@@ -37,7 +37,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String sql = "create table if not exists " + TABLE_PERSON + "(_id integer primary key autoincrement, name varchar, age integer,sex varchar)";
 
 
-
         // 执行创建表的sql语句
         db.execSQL(sql);
         Log.d("1542", "DatabaseHelper onCreate");
@@ -47,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-
+        Log.e("onupdate",oldVersion + "---"+newVersion);
         for (int i = oldVersion; i < newVersion; i++) {
             switch (i) {
                 case 1:

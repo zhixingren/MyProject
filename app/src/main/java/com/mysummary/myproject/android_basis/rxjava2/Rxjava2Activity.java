@@ -36,9 +36,49 @@ public class Rxjava2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rxjava2);
+        demo1();
+
+    }
+
+
+    private void demo1() {
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> e) throws Exception {
+
+                e.onNext(1);
+//                Log.e(TAG, "subscribe: .e" + Thread.currentThread().getName());
+            }
+        })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        Log.e(TAG,"onSubscribe");
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+                        Log.e(TAG, "数字 --- " + integer);
+                        Log.e(TAG, "subscribe: .e" + Thread.currentThread().getName());
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
 
 
     }
+
 
     //如果用map处理
     public void mapAsflagMap() {
@@ -167,64 +207,6 @@ public class Rxjava2Activity extends AppCompatActivity {
 
             }
         });
-
-    }
-
-    public void map() {
-        Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
-            @Override
-            public void subscribe(ObservableEmitter e) throws Exception {
-                Log.d(TAG, "=========================currentThread name: " + Thread.currentThread().getName());
-
-                e.onNext(1);
-                e.onNext(2);
-
-                e.onComplete();
-            }
-
-        });
-
-        Observer observer = new Observer<String>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-                Log.d(TAG, "======================onSubscribe");
-
-//                d.dispose();如果调用，就不会发送事件了（e.onNext()不会执行）
-            }
-
-            @Override
-            public void onNext(String integer) {
-                Log.d(TAG, "======================onNext" + integer);
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                Log.d(TAG, "======================onError");
-
-            }
-
-            @Override
-            public void onComplete() {
-                Log.d(TAG, "======================onComplete");
-
-            }
-        };
-
-        observable
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(observer);
-
-        //map
-
-        observable.map(new Function<Integer, String>() {
-            @Override
-            public String apply(Integer o) throws Exception {
-
-                return "im " + o;
-            }
-        }).subscribe(observer);
 
     }
 

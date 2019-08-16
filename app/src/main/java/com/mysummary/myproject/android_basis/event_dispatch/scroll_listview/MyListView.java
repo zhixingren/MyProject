@@ -14,7 +14,6 @@ import android.widget.ScrollView;
 
 //内部拦截法，让父view的onInterceptTouchEvent不拦截,
 //此拦截方法必须是viewgroup的，不能是scrollview的。
-//如果是内部拦截法，不需要自定义Scrollview,直接自定义listview就可以了
 
 public class MyListView extends ListView {
 
@@ -35,7 +34,6 @@ public class MyListView extends ListView {
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         return true;
     }
-
 
     float initY = 0;
     boolean flag = true;
@@ -85,15 +83,15 @@ public class MyListView extends ListView {
                 }
 
                 break;
-//            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_UP:
 //                getParent().requestDisallowInterceptTouchEvent(false);
-//                break;
+                break;
 
         }
 
+        Log.e("ontouch","onTouchEvent");
         //返回super.onTouchEvent(ev) 因为要在其中做一些原始操作，比如滑动滚动之类的
         return super.onTouchEvent(ev);
     }
-
 
 }

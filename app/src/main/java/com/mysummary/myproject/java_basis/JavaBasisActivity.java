@@ -9,7 +9,6 @@ import android.widget.Button;
 import com.mysummary.myproject.MainActivity;
 import com.mysummary.myproject.R;
 import com.mysummary.myproject.java_basis.fanxing.FanXingActivity;
-import com.mysummary.myproject.java_basis.类加载.A;
 
 public class JavaBasisActivity extends AppCompatActivity implements View.OnClickListener{
 

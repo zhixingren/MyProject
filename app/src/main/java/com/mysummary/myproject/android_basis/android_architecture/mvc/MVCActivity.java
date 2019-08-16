@@ -53,7 +53,7 @@ public class MVCActivity extends AppCompatActivity {
 
         request();
 
-        //requstGet();
+//        requstGet();
 
 
     }
@@ -96,6 +96,7 @@ public class MVCActivity extends AppCompatActivity {
 
         //步骤4:创建Retrofit对象
         Retrofit retrofit = new Retrofit.Builder()
+                .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .baseUrl("http://fanyi.youdao.com/") // 设置 网络请求 Url
                 .addConverterFactory(GsonConverterFactory.create()) //设置使用Gson解析(记得加入依赖)
                 .build();
@@ -103,8 +104,20 @@ public class MVCActivity extends AppCompatActivity {
         // 步骤5:创建 网络请求接口 的实例
         MyInterface request = retrofit.create(MyInterface.class);
 
+
         //对 发送请求 进行封装(设置需要翻译的内容)
         Call<Translation1> call = request.getCall("I love you");
+
+        try {
+            Log.e("TAG",
+            Class.forName("com.mysummary.myproject.android_basis.android_architecture.mvc.MVCActivity").getMethod("requstGet").getGenericReturnType().toString());
+
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
 
         //步骤6:发送网络请求(异步)
         call.enqueue(new Callback<Translation1>() {

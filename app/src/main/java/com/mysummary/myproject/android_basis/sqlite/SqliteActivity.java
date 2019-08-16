@@ -92,6 +92,9 @@ public class SqliteActivity extends AppCompatActivity {
         // having：分组筛选数据的关键字（多数情况用不上）
         // orderBy：排序。如果null则为默认排序
 //        Cursor cursor = db.query(DatabaseHelper.TABLE_PERSON, new String[]{"name", "age"}, "name = ?", new String[]{"张三"}, null, null, null);
+        int version = db.getVersion();
+
+        Log.d("1542",version+"");
         Cursor cursor = db.query(DatabaseHelper.TABLE_PERSON, null, null, null, null, null, null);
 
         String[] columnNames = cursor.getColumnNames();

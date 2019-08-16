@@ -21,6 +21,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/head"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
                 />
             <com.mysummary.myproject.android_basis.zidingyi_view.RoundView.RoundImageViewTwo
                 android:id="@+id/ri_two"
@@ -41,6 +43,9 @@
                 custom:titleTextSize="40sp"
                 android:layout_marginLeft="20dp"
                 android:minHeight="100dp"/>
+
+
+
 
         </LinearLayout>
     </ScrollView>

@@ -48,8 +48,6 @@ public class ScrollListVIewActivity extends AppCompatActivity {
        // LIstViewHeight.setListViewHeightBasedOnChildren(lv);
 
 
-        //sv.setListView(lv);
+//        sv.setListView(lv);
     }
-
-
 }

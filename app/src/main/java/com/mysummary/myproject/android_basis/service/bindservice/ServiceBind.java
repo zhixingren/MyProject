@@ -40,6 +40,7 @@ public class ServiceBind extends Service{
             CommonUtil.LogUtil(TAG,"getServiceBind");
             return ServiceBind.this;
         }
+
     }
 
     @Override

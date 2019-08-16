@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#eee">
+
+    <TextView
+        android:id="@+id/tv_hint_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:text="操作项"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/tv_content1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:text="访场申请"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hint_title"
+        android:layout_marginTop="1dp"
+        />
+    <TextView
+        android:id="@+id/tv_content2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:text="央行征信数据"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content1"
+        android:layout_marginTop="1dp"
+        />
+    <TextView
+        android:id="@+id/tv_cancle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:text="取消"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content2"
+        android:layout_marginTop="1dp"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

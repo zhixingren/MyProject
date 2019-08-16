@@ -13,7 +13,10 @@ import com.mysummary.myproject.base.http.ResObserver;
 import com.mysummary.myproject.base.http.ServersMethod;
 import com.mysummary.myproject.base.http.SubscriberOnListener;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RecylcerViewActivity extends AppCompatActivity {
 
@@ -37,36 +40,45 @@ public class RecylcerViewActivity extends AppCompatActivity {
         //设置item动画效果
         rl.setItemAnimator(new DefaultItemAnimator());
 
+        List<GpBean.ManagersBean> myProjectList = new ArrayList<>();
+        for (int i=0;i<25;i++){
+            GpBean.ManagersBean bean = new GpBean.ManagersBean();
+            bean.setName("赵四"+i);
+            myProjectList.add(bean);
+
+        }
+
+        adapter = new RecyclerAdapter(myProjectList,RecylcerViewActivity.this);
+        rl.setAdapter(adapter);
+
+//
+//        gpSubscriberOnListener = new SubscriberOnListener<GpBean>() {
+//            @Override
+//            public void onNext(GpBean gpBean) {
+//                List<GpBean.ManagersBean> myProjectList = gpBean.getManagers();
+//
+//                adapter = new RecyclerAdapter(myProjectList,RecylcerViewActivity.this);
+//                rl.setAdapter(adapter);
+//
+//
+//            }
+//
+//            @Override
+//            public void onError(Throwable e) {
+//                e.printStackTrace();
+////                ErrorHandle.dealWithError(e);
+//            }
+//        };
 
 
-
-        gpSubscriberOnListener = new SubscriberOnListener<GpBean>() {
-            @Override
-            public void onNext(GpBean gpBean) {
-                List<GpBean.ManagersBean> myProjectList = gpBean.getManagers();
-
-                adapter = new RecyclerAdapter(myProjectList,RecylcerViewActivity.this);
-                rl.setAdapter(adapter);
-
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                e.printStackTrace();
-//                ErrorHandle.dealWithError(e);
-            }
-        };
-
-
-        getBaseInfo();
+//        getBaseInfo();
     }
 
 
     public void getBaseInfo(){
         ResObserver<GpBean> mResObserver = new ResObserver<>(gpSubscriberOnListener);
-//        Map<String, Object> map = new HashMap<>();
-//        map.put("accessToken","cabd120591c24291818b0e046fa98475");
+        Map<String, Object> map = new HashMap<>();
+        map.put("accessToken","cabd120591c24291818b0e046fa98475");
         String id = "1";
         new ServersMethod().getGpData(mResObserver,id);
     }

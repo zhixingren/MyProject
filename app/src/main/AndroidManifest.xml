@@ -4,19 +4,20 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".app.QiandaoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <activity android:name=".android_basis.databingding2.DataBingPracticeActivity"></activity>
+        <activity android:name=".android_basis.databinding.activity.PracticeActivity" />
+        <activity android:name="com.test.RoleTestActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,9 +33,7 @@
         <activity android:name=".materialdesign.activity.TextInputActivity" />
         <activity android:name=".materialdesign.activity.DependencyViewActivity" />
         <activity android:name=".materialdesign.activity.DependencyView1Activity" />
-        <activity android:name=".broadcast.activity.BroadCastActivity" />
-
-        <!-- 静态注册广播 -->
+        <activity android:name=".broadcast.activity.BroadCastActivity" /> <!-- 静态注册广播 -->
         <receiver android:name=".broadcast.receiver.MyBroadCastReciver">
             <intent-filter>
                 <action android:name="com.to.broadcast" />
@@ -42,8 +41,7 @@
         </receiver>
 
         <activity android:name=".android_basis.service.startservice.StartServiceActivity" />
-        <activity android:name=".android_basis.service.ServiceActivity" />
-        <!-- 注册服务 -->
+        <activity android:name=".android_basis.service.ServiceActivity" /> <!-- 注册服务 -->
         <service android:name=".android_basis.service.startservice.ServiceStart" />
         <service android:name=".android_basis.service.bindservice.ServiceBind" />
 
@@ -79,15 +77,7 @@
         <activity android:name=".android_basis.event_dispatch.scroll_listview.ScrollListVIewActivity" />
         <activity android:name=".android_basis.event_dispatch.nestscrollrecyclerview.NestScrollRecyclerViewActivity" />
         <activity android:name=".android_basis.event_dispatch.nest_scroll_recycl_viewpage.NestScrollRecyclViewPagerActivity" />
-        <activity android:name=".android_basis.ui_optimization.UIActivity"></activity>
-
-
-        <!--配置友盟渠道-->
-        <!--<meta-data-->
-            <!--android:value="${CHANNEL_VALUE}"-->
-            <!--android:name="UMENG_CHANNEL"/>-->
+        <activity android:name=".android_basis.ui_optimization.UIActivity" />
     </application>
-
-
 
 </manifest>

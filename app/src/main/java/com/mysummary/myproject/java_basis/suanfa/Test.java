@@ -21,8 +21,6 @@ public class Test {
 
      */
     public static void main(String[] args){
-        //maopao();
-//        jiandanxunze();
 //        int [] arr = {4,3,6,10,1,5,20,13};
         int[] arr = {72,6 ,57, 88, 60,42,83,73, 48, 85};
         quicksort(arr,0,9);
@@ -78,29 +76,8 @@ public class Test {
 //        }
 //
 
-    //
-    public static void maopao(){
-        int [] arr = {1,3,6,10,4,5,20,13};
 
-        for (int i = 1; i < arr.length; i++) {
 
-            for (int j = 0; j < arr.length - i; j++) {
-                int temp = 0 ;
-                if (arr[j]>arr[j+1]){
-                    temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp ;
-
-                }
-            }
-
-        }
-
-        for (int a:
-                arr) {
-            System.out.println(a);
-        }
-    }
 
 
 
@@ -135,4 +112,61 @@ public class Test {
         n[left] = pivot;
         return left;
     }
+
+
+}
+
+/**
+ * 冒泡排序
+ */
+class MaoPao{
+
+    public static void main(String[] args){
+        int [] arr = {1,3,6,10,4,5,20,13};
+
+        for (int j=1;j<arr.length;j++){
+            for (int i=0;i<arr.length-j;i++){
+                int temp ;
+                if (arr[i]>arr[i+1]){
+                    temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp ;
+                }
+            }
+        }
+
+        for (int a:
+                arr) {
+            System.out.println(a);
+        }
+    }
+}
+/**
+ * 选择排序
+ */
+class XuanZe{
+
+    public static void main(String[] args){
+        int [] arr = {1,3,6,10,4,5,20,13,11};
+
+        for (int i=0;i< arr.length;i++){
+            int minTemp = i ;
+            for (int j = i;j<arr.length;j++){
+                if (arr[j]<arr[minTemp]){
+                    minTemp = j ;
+                }
+            }
+            int temp = arr[minTemp];
+            arr[minTemp] = arr[i];
+            arr[i] = temp;
+        }
+
+        for (int e:
+             arr) {
+            System.out.println(e);
+        }
+
+    }
+
+
 }

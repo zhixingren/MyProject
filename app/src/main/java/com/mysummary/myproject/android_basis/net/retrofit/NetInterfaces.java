@@ -11,11 +11,11 @@ import retrofit2.http.GET;
 
 public interface NetInterfaces {
 
-    @GET("configs/adverts?spaceId=1011")
+    @GET("configs/adverts?spaceId=1021")
     Observable<BaseEntity> getRegist();
 
 
-    @GET("configs/adverts?spaceId=1021")
+    @GET("configs/adverts?spaceId=1011")
     Observable<BaseEntity> getLogin();
 
 

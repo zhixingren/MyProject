@@ -41,6 +41,7 @@ public class EventActivity extends AppCompatActivity {
     Button button ;
 
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +70,6 @@ public class EventActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     @OnClick({R.id.bt,R.id.bt_nest,R.id.bt_v})
@@ -92,23 +92,28 @@ public class EventActivity extends AppCompatActivity {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.e("demo","MainActivity-----------onTouchEvent--------------" + event.toString());
-        super.onTouchEvent(event);
-        return super.onTouchEvent(event);
+        Log.e("demo","MainActivity-----------onTouchEvent--------------" + event.getAction());
+        //super.onTouchEvent(event);
+        return false;
     }
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        Log.e("demo","MainActivity-----------dispatchTouchEvent--------" + event.toString());
-        super.dispatchTouchEvent(event);
-        return super.dispatchTouchEvent(event);
+        Log.e("demo","MainActivity-----------dispatchTouchEvent--------" + event.getAction());
+//        super.dispatchTouchEvent(event);
+        return  super.dispatchTouchEvent(event);
     }
 
-    /*
-        1.activity的dispatchTouchEvent返回true,事件停止传递。返回false，则调用自己的onTouchEvent。
+    /**
+     * ACTION_DOWN = 0
+     * ACTION_UP = 1
+     * ACTION_MOVE = 2
+     * ACTION_CANCEL = 3
+     *
+     *
+     *
+        1.activity的dispatchTouchEvent返回true或者false,事件被消费，停止传递。
           如果onTouchEvent返回true（此时不做讨论，因为在window边界以外,如果返回false,未消费（默认,也不做谈论）
         2.只有当dispatchTouchEvent返回super.dispatchTouchEvent(event)时，才向下传递。
-
-
 
      */
 

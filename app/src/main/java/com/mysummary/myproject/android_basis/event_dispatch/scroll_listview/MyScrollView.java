@@ -16,7 +16,7 @@ import android.widget.ScrollView;
 public class MyScrollView extends ScrollView {
 
 
-    ListView lv ;
+    ListView lv;
 
     public MyScrollView(Context context) {
         super(context);
@@ -36,34 +36,45 @@ public class MyScrollView extends ScrollView {
 //    }
 
 
-    //    float last ;
-//    float nowY ;
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+
+        Log.e("dispatchTouchEvent",ev.getAction()+"");
+
+        return super.dispatchTouchEvent(ev);
+    }
+
+//    float last;
+//    float nowY;
 //    @Override
 //    public boolean onInterceptTouchEvent(MotionEvent event) {
 //
 //        //ScrollView在该方法中进行了一些赋值操作，
 //        super.onInterceptTouchEvent(event);
-//
 //        boolean intercepted = false;
-//        //last =  event.getY();
-//        float currentHeight = lv.getHeight();
 //
-//        switch (event.getAction()){
+//        //last =  event.getY();
+//        int currentHeight = lv.getHeight();
+//
+//        switch (event.getAction()) {
 //            case MotionEvent.ACTION_DOWN:
-//               last = event.getY();;
-//                //intercepted = false;
+//                last = event.getY();
 //                break;
 //
 //            case MotionEvent.ACTION_MOVE:
 //                nowY = event.getY();
-//                intercepted = false ;
-//                if (lv.getFirstVisiblePosition()==0&&nowY-last>0&&lv.getChildAt(0).getTop() >= lv.getPaddingTop()){
+//                if (lv.getFirstVisiblePosition() == 0 && nowY - last > 0 && lv.getChildAt(0).getTop() >= lv.getPaddingTop()) {
 //                    intercepted = true;
 //                    break;
 //                }
+//                Log.e("Position", lv.getLastVisiblePosition() + "");
+//                Log.e("getCount", (lv.getCount() - 1) + "");
+//                Log.e("nowY", nowY + "");
+//                Log.e("last", last + "");
+//                Log.e("currentHeight", currentHeight + "");
+//                Log.e("getChildAt", lv.getChildAt(lv.getChildCount() - 1).getBottom()+"");
 //
-//                if (lv.getLastVisiblePosition() ==lv.getCount()-1&&nowY-last<0&&currentHeight == lv.getChildAt(lv.getChildCount()-1).getBottom()){
-//
+//                if (lv.getLastVisiblePosition() == lv.getCount() - 1 && nowY - last < 0 && currentHeight == lv.getChildAt(lv.getChildCount() - 1).getBottom()) {
 //                    intercepted = true;
 //                    break;
 //                }
@@ -74,18 +85,13 @@ public class MyScrollView extends ScrollView {
 //                break;
 //        }
 //
-//
-//
-//
 //        return intercepted;
-//
-//
 //    }
+//
+//    public void setListView(ListView lv) {
+//
+//        this.lv = lv;
+//    }
+//
 
-    public void setListView(ListView lv ){
-
-       this.lv = lv ;
-
-
-    }
 }

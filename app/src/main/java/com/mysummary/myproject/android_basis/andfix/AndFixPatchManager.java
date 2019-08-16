@@ -35,7 +35,7 @@ public class AndFixPatchManager {
     public void initManager(Context context) {
         mPatchManager = new PatchManager(context);
         mPatchManager.init(CommonUtil.getLocalVersionName(context));
-        mPatchManager.loadPatch();
+        mPatchManager.loadPatch();//
     }
 
     //加载patch文件

@@ -2,6 +2,6 @@ package com.mysummary.myproject.android_basis.net.config;
 
 public class NetConfig {
 
-    public static String ServerRootUrl = "https://app2.qiandaojr.com/apiv3/";
+    public static String ServerRootUrl = "https://api.qiandaojr.com/apiv3/";
 }
 

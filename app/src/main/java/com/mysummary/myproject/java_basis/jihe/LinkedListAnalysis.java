@@ -50,5 +50,13 @@ public class LinkedListAnalysis {
         System.out.println(linkedList.size());
 
 
+        LinkedList linkedList1 = new LinkedList();
+        linkedList1.add(null);
+        linkedList1.add("asa");
+        for (Object e:
+             linkedList1) {
+            System.out.println(e);
+        }
+
     }
 }

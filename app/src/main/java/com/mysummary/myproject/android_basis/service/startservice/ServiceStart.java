@@ -10,6 +10,8 @@ import android.support.annotation.Nullable;
 import com.mysummary.myproject.R;
 import com.mysummary.myproject.utils.CommonUtil;
 
+import static com.mysummary.myproject.utils.CommonUtil.LogUtil;
+
 /**
  * Created by xingzhi on 2018/4/21.
  *
@@ -33,13 +35,15 @@ public class ServiceStart extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        CommonUtil.LogUtil(TAG,"onCreate");
+        LogUtil(TAG,"onCreate");
         player = MediaPlayer.create(this, R.raw.birds);
 
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        LogUtil(TAG,"onStartCommand");
+
         if (intent != null) {
             int type = intent.getIntExtra("type", -1);
             switch (type) {
@@ -83,7 +87,7 @@ public class ServiceStart extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        CommonUtil.LogUtil(TAG,"onDestroy");
+        LogUtil(TAG,"onDestroy");
 
     }
 }

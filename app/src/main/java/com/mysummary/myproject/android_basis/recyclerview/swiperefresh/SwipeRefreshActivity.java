@@ -66,37 +66,47 @@ public class SwipeRefreshActivity extends AppCompatActivity implements AdapterVi
         swipeRefresh.setRefreshing(true);
 
 
+        List<GpBean.IndustryCountListBean> myProjectList = new ArrayList<>();
+        for (int i=0;i<25;i++){
+            GpBean.IndustryCountListBean bean = new GpBean.IndustryCountListBean();
+            bean.setIndustryName("赵四"+i);
+            myProjectList.add(bean);
 
-        gpSubscriberOnListener = new SubscriberOnListener<GpBean>() {
-            @Override
-            public void onNext(GpBean gpBean) {
-//                List<GpBean.ManagersBean> myProjectList = gpBean.getManagers();
+        }
 
+        adapter = new RecyclerAdapterOne(myProjectList,this);
+        rv.setAdapter(adapter);
 
-                List<GpBean.IndustryCountListBean> industryCountList = gpBean.getIndustryCountList();
-                myProjectList = industryCountList;
-                adapter = new RecyclerAdapterOne(myProjectList,SwipeRefreshActivity.this);
-                rv.setAdapter(adapter);
-
-//                new Handler().postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-                        swipeRefresh.setRefreshing(false);
-//                    }
-//                }, 1000);
-
-            }
-
-            @Override
-            public void onError(Throwable e) {
-                e.printStackTrace();
-//                ErrorHandle.dealWithError(e);
-                swipeRefresh.setRefreshing(false);
-            }
-        };
-
-
-        getBaseInfo();
+//        gpSubscriberOnListener = new SubscriberOnListener<GpBean>() {
+//            @Override
+//            public void onNext(GpBean gpBean) {
+////                List<GpBean.ManagersBean> myProjectList = gpBean.getManagers();
+//
+//
+//                List<GpBean.IndustryCountListBean> industryCountList = gpBean.getIndustryCountList();
+//                myProjectList = industryCountList;
+//                adapter = new RecyclerAdapterOne(myProjectList,SwipeRefreshActivity.this);
+//                rv.setAdapter(adapter);
+//
+////                new Handler().postDelayed(new Runnable() {
+////                    @Override
+////                    public void run() {
+//                        swipeRefresh.setRefreshing(false);
+////                    }
+////                }, 1000);
+//
+//            }
+//
+//            @Override
+//            public void onError(Throwable e) {
+//                e.printStackTrace();
+////                ErrorHandle.dealWithError(e);
+//                swipeRefresh.setRefreshing(false);
+//            }
+//        };
+//
+//
+//        getBaseInfo();
     }
 
 
