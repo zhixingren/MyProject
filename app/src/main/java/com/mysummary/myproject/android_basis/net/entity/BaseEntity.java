@@ -3,7 +3,6 @@ package com.mysummary.myproject.android_basis.net.entity;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
-import com.mysummary.myproject.BR;
 
 import java.io.Serializable;
 import java.util.List;
@@ -196,7 +195,7 @@ public class BaseEntity implements Serializable{
 
         public void setFundMarkValue1(String  fundMarkValue1) {
             this.fundMarkValue1 = fundMarkValue1;
-            notifyPropertyChanged(BR.fundMarkValue1);
+//            notifyPropertyChanged(BR.fundMarkValue1);
 
         }
 

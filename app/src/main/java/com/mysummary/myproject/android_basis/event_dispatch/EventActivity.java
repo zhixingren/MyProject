@@ -92,13 +92,13 @@ public class EventActivity extends AppCompatActivity {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.e("demo","MainActivity-----------onTouchEvent--------------" + event.getAction());
+        Log.e("demo","RecyclerViewMainActivity-----------onTouchEvent--------------" + event.getAction());
         //super.onTouchEvent(event);
         return false;
     }
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        Log.e("demo","MainActivity-----------dispatchTouchEvent--------" + event.getAction());
+        Log.e("demo","RecyclerViewMainActivity-----------dispatchTouchEvent--------" + event.getAction());
 //        super.dispatchTouchEvent(event);
         return  super.dispatchTouchEvent(event);
     }

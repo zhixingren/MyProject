@@ -59,7 +59,6 @@ public class HandlerThreadDemo extends AppCompatActivity{
         message.arg1 = 1;
         handler.sendMessage(message);
 
-
 //        mHandlerThread.quit();
 
         new MyAsyncTask(this).execute();

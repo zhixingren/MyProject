@@ -1,10 +1,11 @@
 package com.mysummary.myproject.android_basis.android_architecture.mvc;
 
-import android.app.IntentService;
 import android.os.AsyncTask;
+import android.support.v4.util.ArrayMap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.SparseArray;
 
 import com.google.gson.Gson;
 import com.mysummary.myproject.R;
@@ -12,13 +13,10 @@ import com.mysummary.myproject.android_basis.android_architecture.http.MyInterfa
 import com.mysummary.myproject.android_basis.android_architecture.http.Translation;
 import com.mysummary.myproject.android_basis.android_architecture.http.Translation1;
 
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.io.IOException;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,14 +33,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MVCActivity extends AppCompatActivity {
 
-
+    SparseArray array = new SparseArray();
+    ArrayMap map = new ArrayMap();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mvc);
 
-//        new AsyncTask<>()
+//       array.put(1,"");
+//
+//       map.put("","");
+
+
+//        new AsyncTask<>();
 
 
 //        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
@@ -51,9 +55,36 @@ public class MVCActivity extends AppCompatActivity {
 //        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
 //        new IntentService()
 
-        request();
 
-//        requstGet();
+//        OkHttpClient client = new OkHttpClient.Builder().build();
+//
+//        Request request = new Request.Builder().get().url("").build();
+//
+//        okhttp3.Call call = client.newCall(request);
+//
+//        try {
+//            okhttp3.Response response = call.execute();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        call.enqueue(new okhttp3.Callback() {
+//            @Override
+//            public void onFailure(okhttp3.Call call, IOException e) {
+//
+//            }
+//
+//            @Override
+//            public void onResponse(okhttp3.Call call, okhttp3.Response response) throws IOException {
+//
+//            }
+//        });
+
+
+
+//        request();
+
+        requstGet();
 
 
     }
@@ -79,7 +110,7 @@ public class MVCActivity extends AppCompatActivity {
 
 //                List<Translation.WebBean> web = response.body().getWeb();
 //                for (int i = 0; i < web.size(); i++) {
-                Log.e("ee", response.body().toString());
+                Log.e("ee", Thread.currentThread().getName());
 //                }
 
             }
@@ -87,6 +118,7 @@ public class MVCActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Translation> call, Throwable t) {
                 Log.e("ee","连接失败！");
+                Log.e("ee",Thread.currentThread().getName());
             }
         });
 

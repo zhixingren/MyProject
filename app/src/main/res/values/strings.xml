@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">MyProject</string>
 
+    <string name="content_behavior" translatable="false">com.mysummary.myproject.materialdesign.behavior.HeaderScrollBehavior</string>
+
+    <string name="floating_title_behavoir">com.mysummary.myproject.materialdesign.behavior.FloatingHeaderTitleBehavior</string>
     <string-array name="apples">
         <item>iphone3g</item>
         <item>iphone3gs</item>
@@ -18,8 +21,5 @@
         <item>iphone8p</item>
         <item>iphoneX</item>
     </string-array>
-
-    <string name="content_behavior" translatable="false">com.mysummary.myproject.materialdesign.behavior.HeaderScrollBehavior</string>
-    <string name="floating_title_behavoir">com.mysummary.myproject.materialdesign.behavior.FloatingHeaderTitleBehavior</string>
 
 </resources>

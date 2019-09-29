@@ -3,6 +3,7 @@ package com.mysummary.myproject.android_basis.zidingyi_view.RoundView;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
@@ -52,71 +53,52 @@ public class RoundImageViewTwo extends AppCompatImageView{
     protected void onDraw(Canvas canvas) {
 
         Drawable drawable = getDrawable();
-        if (drawable!=null){
+        if (null != drawable) {
             Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-//            Bitmap b = getRoundBitmap(bitmap, 50);
-
-            Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
-                    bitmap.getHeight(), Bitmap.Config.ARGB_8888);
-
-            final Rect rect = new Rect(0, 0, 558,900);
-
-            final Rect dsc = new Rect(0, 0, 300, 300);
+            Bitmap b = getRoundBitmap(bitmap, 50);
 
 
-            Log.e("tag",bitmap.getWidth()+"--"+bitmap.getHeight());
-
-            Log.e("tag1",getWidth()+"--"+getHeight());
-
-
-
-            final RectF rectF = new RectF(rect);
-            paint.setAntiAlias(true);
-//        canvas.drawARGB(0, 0, 0, 0);
-//        paint.setColor(color);
-//        paint.setColor(Color.RED);
-//        int x = bitmap.getWidth();
-
-//            canvas.drawCircle(0,0,50,paint);
-//            canvas.drawRoundRect(rectF, 100, 100, paint);
-//            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-            canvas.drawBitmap(bitmap, rect, dsc, paint);
-
-//            final Rect rectSrc = new Rect(0, 0, b.getWidth(), b.getHeight());
-//            final Rect rectDest = new Rect(0,0,getWidth(),getHeight());
+            final Rect rectSrc = new Rect(0, 0, b.getWidth(), b.getHeight());
+            final Rect rectDest = new Rect(0,0,getWidth(),getHeight());
 //            paint.reset();
-//            canvas.drawBitmap(b, rectSrc, rectDest, paint);
-//            canvas.drawBitmap(b,0,0,paint);
+            canvas.drawBitmap(b, rectSrc, rectDest, paint);
 
-        }else {
+            Log.e("rect",rectSrc.right+"");
+            Log.e("rectDest",rectDest.right+"");
 
+        } else {
             super.onDraw(canvas);
         }
-
-
     }
 
+    /**
+     * 获取圆角矩形图片方法
+     * @param bitmap
+     * @param roundPx,一般设置成14
+     * @return Bitmap
+     * @author caizhiming
+     */
     private Bitmap getRoundBitmap(Bitmap bitmap, int roundPx) {
         Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
                 bitmap.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(output);
 
-//        final int color = 0xff424242;
+        final int color = 0xff424242;
 
         final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
         final RectF rectF = new RectF(rect);
-        paint.setAntiAlias(true);
+//        paint.setAntiAlias(true);
 //        canvas.drawARGB(0, 0, 0, 0);
-//        paint.setColor(color);
-//        paint.setColor(Color.RED);
-//        int x = bitmap.getWidth();
 
+        int x = bitmap.getWidth();
+        //先画的在下层。属于目标
+//        int saveLayer = canvas.saveLayer(null, null, Canvas.ALL_SAVE_FLAG);
         canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         canvas.drawBitmap(bitmap, rect, rect, paint);
+        paint.setXfermode(null);
+//        canvas.restoreToCount(saveLayer);
         return output;
-
-
     }
 
 

@@ -13,10 +13,14 @@ import com.mysummary.myproject.R;
 import com.mysummary.myproject.android_basis.android_architecture.mvc.MVCActivity;
 import com.mysummary.myproject.android_basis.android_architecture.mvp.view.MVPActivity;
 import com.mysummary.myproject.android_basis.constraint_Layout.ConstraintLayoutActivity;
+import com.mysummary.myproject.android_basis.dagger.DaggerActivity;
 import com.mysummary.myproject.android_basis.databinding.DataBindingActivity;
+import com.mysummary.myproject.android_basis.databingding2.DataBingPracticeActivity;
 import com.mysummary.myproject.android_basis.donghua.AnimationActivity;
 import com.mysummary.myproject.android_basis.event_bus.EventBusActivity;
 import com.mysummary.myproject.android_basis.event_dispatch.EventActivity;
+import com.mysummary.myproject.android_basis.greendao.GreenDaoActivity;
+import com.mysummary.myproject.android_basis.lottie.LottieActivity;
 import com.mysummary.myproject.android_basis.multi_thread.HandlerThreadDemo;
 import com.mysummary.myproject.android_basis.net.application.BaseActivity;
 import com.mysummary.myproject.android_basis.net.entity.BaseEntity;
@@ -27,8 +31,11 @@ import com.mysummary.myproject.android_basis.net.retrofit.SubscriberOnListener;
 import com.mysummary.myproject.android_basis.progressbar.ProgressBarActivity;
 import com.mysummary.myproject.android_basis.recyclerview.RecylcerViewActivity;
 import com.mysummary.myproject.android_basis.recyclerview.swiperefresh.SwipeRefreshActivity;
+import com.mysummary.myproject.android_basis.recyclerview1.lemon.ui.RecyclerViewActivityDemo;
+import com.mysummary.myproject.android_basis.recyclerview1.recyclerview.ui.RecyclerViewMainActivity;
 import com.mysummary.myproject.android_basis.rxjava2.Rxjava2Activity;
 import com.mysummary.myproject.android_basis.sqlite.SqliteActivity;
+import com.mysummary.myproject.android_basis.ui_optimization.UIActivity;
 import com.mysummary.myproject.android_basis.web_view.WebViewActivity;
 import com.mysummary.myproject.android_basis.zidingyi_view.CustomViewActivity;
 
@@ -38,7 +45,13 @@ import io.reactivex.disposables.Disposable;
 public class AndroidBasisActivity extends BaseActivity implements View.OnClickListener {
 
     Button btn_to_webview, btn_to_customview,
-            btn_to_animation, btn_to_eventbus, btn_to_mvp, btn_to_sqlite, btn_to_constraint_layout, btn_to_recycler, btn_to_handlthread, btn_to_event_dispatch, btn_to_swipe_refresh, btn_to_mvc, btn_to_data_binding, btn_to_rxjava, btn_to_progressbar, btn_to_uiactivity;
+            btn_to_animation, btn_to_eventbus,
+            btn_to_mvp, btn_to_sqlite, btn_to_constraint_layout,
+            btn_to_recycler, btn_to_handlthread, btn_to_event_dispatch,
+            btn_to_swipe_refresh, btn_to_mvc, btn_to_data_binding,
+            btn_to_rxjava, btn_to_progressbar, btn_to_uiactivity,
+            btn_to_swipe_refresh2,btn_to_data_binding_practice,
+            btn_ui_youhua,btn_greendao,btn_dagger,btn_lottie;
 
 
     @Override
@@ -77,6 +90,18 @@ public class AndroidBasisActivity extends BaseActivity implements View.OnClickLi
         btn_to_progressbar.setOnClickListener(this);
         btn_to_uiactivity = findViewById(R.id.btn_to_uiactivity);
         btn_to_uiactivity.setOnClickListener(this);
+        btn_to_swipe_refresh2 = findViewById(R.id.btn_to_swipe_refresh2);
+        btn_to_swipe_refresh2.setOnClickListener(this);
+        btn_to_data_binding_practice = findViewById(R.id.btn_to_data_binding_practice);
+        btn_to_data_binding_practice.setOnClickListener(this);
+        btn_ui_youhua = findViewById(R.id.btn_ui_youhua);
+        btn_ui_youhua.setOnClickListener(this);
+        btn_greendao = findViewById(R.id.btn_greendao);
+        btn_greendao.setOnClickListener(this);
+        btn_dagger = findViewById(R.id.btn_dagger);
+        btn_dagger.setOnClickListener(this);
+        btn_lottie = findViewById(R.id.btn_lottie);
+        btn_lottie.setOnClickListener(this);
 
     }
 
@@ -133,6 +158,10 @@ public class AndroidBasisActivity extends BaseActivity implements View.OnClickLi
                 startActivity(new Intent(AndroidBasisActivity.this, DataBindingActivity.class));
 
                 break;
+            case R.id.btn_to_data_binding_practice:
+                startActivity(new Intent(AndroidBasisActivity.this, DataBingPracticeActivity.class));
+
+                break;
 
             case R.id.btn_to_rxjava:
                 startActivity(new Intent(AndroidBasisActivity.this, Rxjava2Activity.class));
@@ -146,6 +175,12 @@ public class AndroidBasisActivity extends BaseActivity implements View.OnClickLi
                 startActivity(intent);
 
                 break;
+           case R.id.btn_to_swipe_refresh2:
+            Intent intent2 = new Intent();
+            intent2.setClass(AndroidBasisActivity.this, RecyclerViewActivityDemo.class);
+            startActivity(intent2);
+
+            break ;
             case R.id.btn_to_uiactivity:
 //                startActivity(new Intent(AndroidBasisActivity.this, UIActivity.class));
 
@@ -306,6 +341,20 @@ public class AndroidBasisActivity extends BaseActivity implements View.OnClickLi
 //                        );
 
 
+                break;
+
+            case R.id.btn_ui_youhua:
+
+                startActivity(new Intent(this, UIActivity.class));
+                break;
+            case R.id.btn_greendao:
+                startActivity(new Intent(this, GreenDaoActivity.class));
+                break;
+            case R.id.btn_dagger:
+                startActivity(new Intent(this, DaggerActivity.class));
+                break;
+            case R.id.btn_lottie:
+                startActivity(new Intent(this, LottieActivity.class));
                 break;
 
         }

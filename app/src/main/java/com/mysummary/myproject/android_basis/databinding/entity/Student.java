@@ -39,7 +39,8 @@ public class Student extends BaseObservable{
 
     public void setHead(String head){
         this.head = head;
-        notifyPropertyChanged(BR.head);
+        notifyPropertyChanged(BR.head);//只更新本字段
+//        notifyChange();//更新所有字段
 
     }
 
@@ -50,7 +51,7 @@ public class Student extends BaseObservable{
 
     public void setName(String name) {
         this.name = name;
-        notifyPropertyChanged(BR.name);
+//        notifyPropertyChanged(BR.name);
     }
 
     @Bindable
@@ -60,7 +61,7 @@ public class Student extends BaseObservable{
 
     public void setSex(String sex) {
         this.sex = sex;
-        notifyPropertyChanged(BR.sex);
+       notifyChange();
 
 
     }
@@ -75,3 +76,5 @@ public class Student extends BaseObservable{
 
 
 }
+
+

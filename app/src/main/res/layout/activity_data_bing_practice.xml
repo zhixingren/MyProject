@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".android_basis.databingding2.DataBingPracticeActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</android.support.constraint.ConstraintLayout>
+    <data>
+        <import type="com.mysummary.myproject.android_basis.databinding.entity.Student" />
+        <variable
+            name="student"
+            type="Student" />
+        <import type="com.mysummary.myproject.android_basis.databingding2.DataBingPracticeActivity.ClickChanged" />
+        <variable
+            name="clickChnge"
+            type="ClickChanged" />
+        <import type="com.mysummary.myproject.android_basis.databinding.entity.Teacher" />
+        <variable
+            name="teacher"
+            type="Teacher" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".android_basis.databingding2.DataBingPracticeActivity">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="@{student.name,default=赵云}"
+            android:textSize="18dp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="@{student.sex}"
+            android:textSize="18dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <Button
+            android:id="@+id/bt_change"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="改变name 与 sex属性"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:onClick="@{()-> clickChnge.changeField()}"
+            app:layout_constraintTop_toBottomOf="@+id/tv_age"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_name_t"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="@{teacher.name,default=陈真}"
+            android:textSize="18dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/bt_change"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+        <Button
+            android:id="@+id/bt_change1"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="改变老师的  name 与 sex属性"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:onClick="@{()-> clickChnge.changeTeacherField()}"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_t"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_double"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" 
+            android:text="@{teacher.name}"
+            app:layout_constraintTop_toBottomOf="@+id/bt_change1"
+
+            />
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_double"
+            android:text="@={teacher.name}"
+            />
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toBottomOf="@+id/et"
+            app:urlImag="@{student.head}"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

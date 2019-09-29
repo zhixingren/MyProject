@@ -33,7 +33,7 @@
                 android:id="@+id/ri_three"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/head"/>
+                android:src="@drawable/pink"/>
             <com.mysummary.myproject.android_basis.zidingyi_view.guolin_view.CustomTitleView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"

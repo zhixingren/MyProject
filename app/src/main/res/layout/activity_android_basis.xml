@@ -69,6 +69,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SwipeRefreshActivity"/>
+
+            <Button
+                android:id="@+id/btn_to_swipe_refresh2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SwipeRefreshActivity2"/>
+
+
             <Button
                 android:id="@+id/btn_to_handlthread"
                 android:layout_width="match_parent"
@@ -85,6 +93,11 @@
                 android:layout_height="wrap_content"
                 android:text="DataBinding"/>
             <Button
+                android:id="@+id/btn_to_data_binding_practice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DataBindingPractice"/>
+            <Button
                 android:id="@+id/btn_to_rxjava"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,6 +113,26 @@
                 android:layout_height="wrap_content"
                 android:text="UIactivity "/>
 
+            <Button
+                android:id="@+id/btn_ui_youhua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="布局优化"/>
+            <Button
+                android:id="@+id/btn_greendao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="greendao数据库"/>
+            <Button
+                android:id="@+id/btn_dagger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="dagger"/>
+            <Button
+                android:id="@+id/btn_lottie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="lottie"/>
 
 
         </LinearLayout>

@@ -68,7 +68,7 @@ public class RoundImageViewThree extends AppCompatImageView {
             Bitmap circleBitmap = toRoundCorner(newBitmap, 14);
 
             final Rect rect = new Rect(0, 0, circleBitmap.getWidth(), circleBitmap.getHeight());
-            paint.reset();
+//            paint.reset();
             //绘制到画布上
             canvas.drawBitmap(circleBitmap, rect, rect, paint);
         } else {
@@ -88,10 +88,13 @@ public class RoundImageViewThree extends AppCompatImageView {
         canvas.drawARGB(0, 0, 0, 0);
         paint.setColor(color);
         int x = bitmap.getWidth();
+//        int layer = canvas.saveLayer(null, null, Canvas.ALL_SAVE_FLAG);
         //下面的radius控制了圆形的大小，从而控制了
-        canvas.drawCircle(x / 2, x / 2, x / 2-5, paint);
+        canvas.drawCircle(x / 2, x / 2, x / 2, paint);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         canvas.drawBitmap(bitmap, rect, rect, paint);
+        paint.setXfermode(null);
+//        canvas.restoreToCount(layer);
         return output;
     }
 }
